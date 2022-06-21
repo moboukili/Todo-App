@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-8">
+          <form id="regForm" [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+              <h1 id="register"><i class="fa fa-check-square-o" aria-hidden="true"></i> Add task</h1>
+              <div class="all-steps" id="all-steps">
+                <span class="step"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+                <span class="step"><i class="fa fa-file-o" aria-hidden="true"></i></span>
+                <span class="step"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                <span class="step"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              </div>
+
+              <div class="tab">
+                <h6>Label</h6>
+                  <p>
+                    <input placeholder="title" oninput="this.className = ''" type="text" formControlName="label"></p>
+              </div>
+              <div class="tab">
+                <h6>Description</h6>
+                  <p><input placeholder="details" oninput="this.className = ''" formControlName="description"></p>
+
+              </div>
+              <div class="tab">
+                  <h6>Type</h6>
+                  <p><select formControlName="type">
+                    <option>work</option>
+                    <option>personal</option>
+                    <option>growth</option>
+                </select></p>
+                <div class="invalid-feedback" *ngIf="submitted && myForm.type.errors?.required">
+                  type is required.
+                </div>
+              </div>
+              <div class="tab">
+                  <h6>Date/Hour</h6>
+                  <p><input oninput="this.className = ''" type="date" formControlName="date"></p>
+              </div>
+              <div style="overflow:auto;" id="nextprevious">
+                  <div style="float:right;">
+                    <button type="submit" id="nextBtn" onclick="nextPrev(1)"><i class="fa fa-angle-double-right"></i></button>
+                    <!-- <button class="btn btn-success btn-md btn-block" type="submit">Submit</button> -->
+                  </div>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fa fa-angle-double-left"></i></button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+

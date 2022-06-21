@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+
+.wrapper {
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    box-shadow: 20px 20px 80px rgb(206, 206, 206)
+}
+
+.h2 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin: 15px;
+  color: #23225A;
+}
+
+#photo img {
+    width: 110px;
+    height: 110px;
+    margin: 15px;
+}
+.h4 {
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+}
+
+.input-field {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #23225A;
+    color: #23225A
+}
+
+.input-field:hover {
+    color: #1a1944;
+    border: 1px solid #1a1944
+}
+
+input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    padding: 0px 2px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin: 0 0 0 20px;
+    color: #464646;
+}
+
+.fa-eye-slash.btn {
+    border: none;
+    outline: none;
+    box-shadow: none
+}
+.btn{
+    box-shadow: 0 0px 0px 0 rgba(255, 255, 255, 0);
+}
+.btn.btn-block {
+    border-radius: 20px;
+    background-color: #961A27;
+    color: #fff;
+    font-size: 17px;
+}
+
+.btn.btn-block:hover {
+    background-color: #75131d
+}
+a {
+  cursor: pointer;
+  color:#23225A !important;
+  font-size: 17px;
+}
+a:hover{
+  color: #1a1944 !important;
+}
+@media(max-width: 575px) {
+    .wrapper {
+        margin: 10px
+    }
+}
+
+@media(max-width:424px) {
+    .wrapper {
+        padding: 30px 10px;
+        margin: 5px
+    }
+
+    .option {
+        position: relative;
+        padding-left: 22px
+    }
+
+    .option label.text-muted {
+        font-size: 0.95rem
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 2px
+    }
+
+    .option .checkmark:after {
+        top: 50%
+    }
+
+    #forgot {
+        font-size: 0.95rem
+    }
+}

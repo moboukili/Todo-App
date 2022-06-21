@@ -1,0 +1,24 @@
+img {
+  width: 230px;
+}
+.botton {
+  color: #fff;
+  background-color: #23225A;
+  border-color: #23225A;
+}
+.botton1 {
+  color: #961A27;
+  background-color: #fff;
+  border-color: #961A27;
+
+}
+.botton1:hover {
+  color: #fff;
+  background-color: #961A27;
+  border-color: #961A27;
+}
+.botton:hover {
+  color: #23225A;
+  background-color: #fff;
+  border-color: #23225A;
+}

@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-8">
+          <form id="regForm" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+              <h1 id="register"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit task</h1>
+                <h6>Label</h6>
+                  <p>
+                    <input placeholder="title" oninput="this.className = ''" type="text" formControlName="label"></p>
+
+                <h6>Description</h6>
+                  <p><input placeholder="details" oninput="this.className = ''" formControlName="description"></p>
+
+                <h6>Type</h6>
+                  <p><select formControlName="type">
+                    <option>work</option>
+                    <option>personal</option>
+                    <option>growth</option>
+                  </select></p>
+                  <div class="invalid-feedback" *ngIf="submitted && myForm.type.errors?.required">
+                    type is required.
+                  </div>
+
+                <h6>Date/Hour</h6>
+                  <p><input oninput="this.className = ''" type="date" formControlName="date"></p>
+
+                  <div style="overflow:auto;">
+                    <div style="float:right;">
+                      <button class="btn btn-success" type="submit">Update</button>
+                    </div>
+                </div>
+          </form>
+      </div>
+  </div>
+</div>

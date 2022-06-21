@@ -1,0 +1,32 @@
+<div class="wrapper bg-white">
+
+  <div class="mb-3" id="photo" style="text-align: center">
+    <span class="h2" style="vertical-align:middle">to Far-Stafford</span>
+    <img style="vertical-align:middle" src="./assets/images/professional.png" alt="AVATAR">
+
+  </div>
+  <div class="h4 text-muted text-center pt-2">Sign Up</div>
+  <form class="pt-3" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group py-2">
+        <div class="input-field"> <span class="fa fa-user p-2"></span>
+          <input placeholder="Enter your Full Name" oninput="this.className = ''" type="text" formControlName="name">
+        </div>
+    </div>
+    <div class="form-group py-2">
+          <div class="input-field"> <span class="fa fa-envelope p-2"></span>
+            <input placeholder="Enter your Email" oninput="this.className = ''" type="email" formControlName="email">
+          </div>
+      </div>
+      <div class="form-group py-1 pb-2">
+          <div class="input-field"> <span class="fa fa-lock p-2"></span>
+              <input [type]="show_button ? 'text' : 'password'" placeholder="Enter your password">
+
+              <span [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()" style="padding: 0 10px;"></span>
+          </div>
+      </div>
+        <div class="text-right mb-3">
+          <a routerLink="/login" routerLinkActive="router-link-active" >sign in?</a>
+        </div>
+       <button type="submit" class="btn btn-block text-center my-3">Register</button>
+  </form>
+</div>
