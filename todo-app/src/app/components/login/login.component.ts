@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
-import { Router } from "@angular/router";
-
-import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,37 +7,18 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService,private router : Router) { }
+  constructor() { }
 
-  model ={
-    email :'',
-    password:''
-  };
-  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  serverErrorMessages: string;
-  ngOnInit() {
-    if(this.userService.isLoggedIn())
-    this.router.navigateByUrl('/userprofile');
+  ngOnInit(): void {
   }
+// variable
+show_button: Boolean = false;
+show_eye: Boolean = false;
 
-  onSubmit(form : NgForm){
-    this.userService.login(form.value).subscribe(
-      res => {
-        this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
-      },
-      err => {
-        this.serverErrorMessages = err.error.message;
-      }
-    );
-  }
-  show_button: Boolean = false;
-  show_eye: Boolean = false;
-
-  //Function
-  showPassword() {
-    this.show_button = !this.show_button;
-    this.show_eye = !this.show_eye;
-  }
+//Function
+showPassword() {
+  this.show_button = !this.show_button;
+  this.show_eye = !this.show_eye;
+}
 
 }

@@ -23,7 +23,7 @@
               </div>
               <div class="tab">
                   <h6>Type</h6>
-                  <p><select formControlName="type">
+                  <p><select formControlName="type" required>
                     <option>work</option>
                     <option>personal</option>
                     <option>growth</option>
@@ -34,7 +34,8 @@
               </div>
               <div class="tab">
                   <h6>Date/Hour</h6>
-                  <p><input oninput="this.className = ''" type="date" formControlName="date"></p>
+                  <p><input oninput="this.className = ''" type="datetime-local" formControlName="date"></p>
+
               </div>
               <div style="overflow:auto;" id="nextprevious">
                   <div style="float:right;">

@@ -21,7 +21,7 @@ export class ApiService {
     throw new Error('Method not implemented.');
   }
 
-  // Create Todo 
+  // Create Todo
   createTodo(data): Observable<any> {
     const url = `${this.baseUri}/create`;
     return this.http.post(url, data)

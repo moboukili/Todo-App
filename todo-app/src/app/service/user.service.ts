@@ -13,6 +13,8 @@ export class UserService {
     email: '',
     password: ''
   };
+  production: false;
+  apiBaseUrl: 'http://localhost:4200';
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
@@ -21,15 +23,15 @@ export class UserService {
   //HttpMethods
 
   postUser(user: User){
-    return this.http.post(environment.apiBaseUrl+'/register',user,this.noAuthHeader);
+    return this.http.post(this.apiBaseUrl+'/register',user,this.noAuthHeader);
   }
 
   login(authCredentials) {
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials,this.noAuthHeader);
+    return this.http.post(this.apiBaseUrl + '/login', authCredentials,this.noAuthHeader);
   }
 
   getUserProfile() {
-    return this.http.get(environment.apiBaseUrl + '/userProfile');
+    return this.http.get(this.apiBaseUrl + '/todos-list');
   }
 
 
