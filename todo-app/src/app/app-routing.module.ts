@@ -7,7 +7,7 @@ import { TodosEditComponent } from './components/todos-edit/todos-edit.component
 import { TodosListComponent } from './components/todos-list/todos-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'register' },
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'create-todos', component: TodosCreateComponent },
   { path: 'edit-todos/:id', component: TodosEditComponent },
   { path: 'todos-list', component: TodosListComponent },
